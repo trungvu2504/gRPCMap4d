@@ -1,4 +1,0 @@
-obj\Debug\net6.0\Protos/Account.cs \
-obj\Debug\net6.0\Protos/AccountGrpc.cs: C:/Users/Admin/.nuget/packages/grpc.tools/2.40.0/build/native/include/google/protobuf/timestamp.proto\
- C:/Users/Admin/.nuget/packages/grpc.tools/2.40.0/build/native/include/google/protobuf/empty.proto\
- Protos/account.proto
