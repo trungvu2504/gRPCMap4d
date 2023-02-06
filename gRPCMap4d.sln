@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gRPCMap4d", "gRPCMap4d\gRPCMap4d.csproj", "{2A0D908D-6DDB-4F93-BF16-DB028DF57D54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gRPCMap4d", "gRPCMap4d\gRPCMap4d.csproj", "{2A0D908D-6DDB-4F93-BF16-DB028DF57D54}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Map4dApiShared.Directions", "Shared\Map4dApiShared.Directions\Map4dApiShared.Directions.csproj", "{47628788-6057-415F-B739-81BA1FAD6E42}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Map4dApiShared.Utils", "Shared\Map4dApiShared.Utils\Map4dApiShared.Utils.csproj", "{1F33499B-467B-4B07-BC9D-9A070A497AE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{2A0D908D-6DDB-4F93-BF16-DB028DF57D54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A0D908D-6DDB-4F93-BF16-DB028DF57D54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A0D908D-6DDB-4F93-BF16-DB028DF57D54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47628788-6057-415F-B739-81BA1FAD6E42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47628788-6057-415F-B739-81BA1FAD6E42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47628788-6057-415F-B739-81BA1FAD6E42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47628788-6057-415F-B739-81BA1FAD6E42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F33499B-467B-4B07-BC9D-9A070A497AE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F33499B-467B-4B07-BC9D-9A070A497AE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F33499B-467B-4B07-BC9D-9A070A497AE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F33499B-467B-4B07-BC9D-9A070A497AE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,11 +1,10 @@
 syntax = "proto3";
 
-option csharp_namespace = "gRPCMap4d";
+option csharp_namespace = "gRPCMap4d.Protos";
 
 package account;
 
 import "google/protobuf/timestamp.proto";
-import "google/protobuf/empty.proto";
 
 // The account service definition.
 service Account {

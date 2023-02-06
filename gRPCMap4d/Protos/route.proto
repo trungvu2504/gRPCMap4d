@@ -1,0 +1,97 @@
+syntax = "proto3";
+
+option csharp_namespace = "gRPCMap4d.Protos";
+
+package route;
+
+// The route service definition.
+service Route {
+  // Send Routes
+  rpc GetRoutes (RouteRequest) returns (RoutesReply);
+  // Send RoutesETA
+  rpc GetRoutesETA (RouteETARequest) returns (RoutesETAReply);
+}
+
+message RouteRequest{
+	string origin = 1;
+	string destination = 2;
+	string waypoints = 3;
+	string mode = 4;
+	string language = 5;
+	int32 weighting = 6; 
+}
+
+message RoutesReply{
+	repeated RouteReply routes = 1;
+	string status = 2;
+	string message = 3;
+}
+
+message RouteReply{
+	repeated LegReply legs = 1;
+	string overview_polyline = 2;
+	string summary = 3;
+	DescriptionReply distance = 4;
+	DescriptionReply duration = 5;
+	repeated LocationReply snapped_waypoints = 6;
+}
+
+message LegReply{
+	DescriptionReply distance = 1;
+	DescriptionReply duration = 2;
+	string end_address = 3;
+	string start_address = 4;
+	LocationReply end_location = 5;
+	LocationReply start_location = 6;
+	StepReply steps = 7;
+}
+
+message DescriptionReply{
+	string step = 1;
+	double value = 2;
+}
+
+message LocationReply{
+	double lat = 1;
+	double lng = 2;
+}
+
+message StepReply{
+	DescriptionReply distance = 1;
+	DescriptionReply duration = 2;
+	LocationReply end_location = 3;
+	LocationReply start_location = 4;
+	string html_instructions = 5;
+	string maneuver = 6;
+	string polyline = 7;
+	string travel_mode = 8;
+	string street_name = 9;
+}
+
+message RouteETARequest{
+	repeated RouteOriginsRequest origins = 1;
+	string destination = 2;
+	string mode = 3;
+	string language = 4;
+	string weighting = 5;
+}
+
+message RouteOriginsRequest{
+	string alias = 1;
+	string location = 2;
+}
+
+message RoutesETAReply{
+	repeated RouteETAReply Routes = 1;
+}
+
+message RouteETAReply{
+	string alias = 1;
+	string location = 2;
+	DescriptionReply distance = 3;
+	DescriptionReply duration = 4;
+	string polyline = 5;
+	string status = 6;
+}
+
+

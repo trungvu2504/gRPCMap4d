@@ -1,10 +1,11 @@
 ﻿using Grpc.Core;
-using gRPCMap4d.Utils;
 using log4net;
 using System.Net.Http.Headers;
 using System.Text.Json;
+using gRPCMap4d.Protos;
+using gRPCMap4d.Utils;
 
-namespace gRPCMap4d;
+namespace gRPCMap4d.Services;
 public class AccountService : Account.AccountBase
 {
 
@@ -79,7 +80,7 @@ public class AccountService : Account.AccountBase
     /// </summary>
     /// <param name="q"></param>
     /// <returns></returns>
-    public async Task<IList<AccountReply>?> GetListAccountAsync(string q, int? maxResult)
+    private async Task<IList<AccountReply>?> GetListAccountAsync(string q, int? maxResult)
     {
         maxResult ??= appSetting.KeyCloak.MaxResultRequest;
 
@@ -94,7 +95,7 @@ public class AccountService : Account.AccountBase
         }
         else
         {
-            
+
             Metadata metadata = new()
             {
                 { "error", $"error get account with q={q} and maxResult ={maxResult}" }
