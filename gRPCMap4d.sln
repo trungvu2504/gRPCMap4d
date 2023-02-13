@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gRPCMap4d", "gRPCMap4d\gRPC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Map4dApiShared.Directions", "Shared\Map4dApiShared.Directions\Map4dApiShared.Directions.csproj", "{65D9F8DE-D862-4EC7-994D-7552200779F2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Map4dApiShared.Utils", "Shared\Map4dApiShared.Utils\Map4dApiShared.Utils.csproj", "{391D40B5-74D6-448C-BA9F-178F2D164C84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{65D9F8DE-D862-4EC7-994D-7552200779F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65D9F8DE-D862-4EC7-994D-7552200779F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65D9F8DE-D862-4EC7-994D-7552200779F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{391D40B5-74D6-448C-BA9F-178F2D164C84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{391D40B5-74D6-448C-BA9F-178F2D164C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{391D40B5-74D6-448C-BA9F-178F2D164C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{391D40B5-74D6-448C-BA9F-178F2D164C84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
