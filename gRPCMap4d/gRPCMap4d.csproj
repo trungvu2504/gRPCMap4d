@@ -7,12 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="Grpc.AspNetCore" Version="2.40.0" />
     <PackageReference Include="log4net" Version="2.0.15" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\Map4dApiShared.Directions\Map4dApiShared.Directions.csproj" />
+    <ProjectReference Include="..\Shared\Map4dApiShared.Utils\Map4dApiShared.Utils.csproj" />
+  </ItemGroup>
+
 	<ItemGroup>
 		<Protobuf Include="Protos\account.proto" GrpcServices="Server" />
+		<Protobuf Include="Protos\route.proto" GrpcServices="Server" />
 	</ItemGroup>
 
 </Project>

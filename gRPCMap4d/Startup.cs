@@ -1,4 +1,5 @@
-﻿using gRPCMap4d.Utils;
+﻿using gRPCMap4d.AutoMapper;
+using gRPCMap4d.Utils;
 using log4net;
 using log4net.Config;
 using System.Net;
@@ -56,6 +57,7 @@ namespace gRPCMap4d
                         Proxy = null,
                         UseProxy = false
                     });
+            services.AddAutoMapper(typeof(MappingProfile));
             services.AddGrpc();
         }
     }
