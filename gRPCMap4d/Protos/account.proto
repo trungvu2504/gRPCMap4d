@@ -1,0 +1,109 @@
+syntax = "proto3";
+
+option csharp_namespace = "gRPCMap4d.Protos";
+
+package account;
+
+import "google/protobuf/timestamp.proto";
+
+// The account service definition.
+service Account {
+  // Send accounts
+  rpc GetAccounts (GetAccountsRequest) returns (AccountsReply);
+  // Send account
+  rpc GetAccount(GetAccountRequest) returns (AccountReply);
+  // Delete account
+  rpc DeleteAccount(GetAccountRequest) returns (DeleteAccountReply);
+  // Update account
+  rpc UpdateAccount(UpdateAccountInfoRequest) returns(UpdateAccountReply);
+  // Check password account
+  rpc CheckPassword(CheckPasswordAccountRequest) returns (UpdateAccountReply);
+  // Change password  account
+  rpc ChangePassword(ChangePasswordAccountRequest) returns (UpdateAccountReply);
+}
+
+// Get accounts request
+message GetAccountsRequest{
+	string q = 1;
+	int32 max_result = 2;
+}
+
+// Get account request
+message GetAccountRequest{
+	string id = 1;
+}
+
+// Get account request
+message DeleteAccountRequest{
+	string id = 1;
+}
+
+// Update account info request
+message UpdateAccountInfoRequest{
+	string id = 1;
+	string last_name =2;
+	string first_name = 3;
+	string province = 4;
+	string phone_number = 5;
+}
+
+// Check password request
+message CheckPasswordAccountRequest{
+	string user_name = 1;
+	string password = 2;
+}
+
+// Change password request
+message ChangePasswordAccountRequest{
+	string id = 1;
+	string password = 2;
+}
+
+// List account reply 
+message AccountsReply{
+	repeated AccountReply accounts = 1;
+}
+
+// Delete account reply 
+message DeleteAccountReply{
+	bool IsSuccess = 1;
+}
+
+// Update account reply 
+message UpdateAccountReply{
+	bool IsSuccess = 1;
+}
+
+// Info account reply
+message AccountReply{
+	string id = 1;
+	google.protobuf.Timestamp start = 2;
+	string user_name = 3;
+	bool enabled = 4;
+	bool totp = 5;
+	bool email_verified = 6;
+	string first_name = 7;
+	string last_name = 8;
+	string email = 9;
+	repeated string disableable_credential_types = 10;
+	repeated string required_actions = 11;
+	int32 not_before = 12;
+	AttributesReply attributes = 13;
+	Access access = 14;
+}
+
+// Attributes account reply
+message AttributesReply{
+	repeated string locale = 1;
+	repeated string province = 2;
+	repeated string phone = 3;
+}
+
+// Access reply
+message Access{
+	bool manage_group_membership = 1;
+	bool view = 2;
+	bool map_roles = 3;
+	bool impersonate = 4;
+	bool manage = 5;
+}
